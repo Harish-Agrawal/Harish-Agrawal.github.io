@@ -24,12 +24,6 @@
       "board": "Shivaji University",
       "courses": [
         {
-          "courseCode": "3IT202",
-          "courseName": "Data Structures",
-          "courseScore": "9/10",
-          "sn": 1
-        },
-        {
           "courseCode": "2MA101-2",
           "courseName": "Engineering Methematics 1-2",
           "courseScore": "10/10",
@@ -245,7 +239,7 @@
       "course": "Primary and Secondary Education",
       "score": "91.45%",
       "inst": "Modern English School,Sangli",
-      "board": "CBSE Chennai",
+      "board": "Shivaji University",
       "courses": [
         {
           "courseCode": "071",
