@@ -47,7 +47,7 @@ function loadWorks(experince){
 		return a.sn-b.sn;
 	});
 	var i;
-	var works = experince.filter((experince)=>experince.type=="work");
+	var works = experince.filter((experince)=>experince.type=="volunteer");
 	var worksInnerHTML = '';
 	for(i=0;i<works.length;i++){
 		worksInnerHTML+=`
