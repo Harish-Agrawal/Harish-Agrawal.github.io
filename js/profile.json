@@ -18,8 +18,8 @@
     {
       "periodStart": "July 2014",
       "periodEnd": "May 2018",
-      "course": "B.Tech Information Technology",
-      "score": "7.59 CGPA",
+      "course": "B.Tech Electronics Engineering",
+      "score": "9.24 CGPA",
       "inst": "Walchand College of Engineering, Sangli",
       "board": "Shivaji University",
       "courses": [
@@ -230,57 +230,51 @@
       ]
     },
     {
-      "periodStart": "April 2013",
+      "periodStart": "February 2012",
       "periodEnd": "May 2014",
-      "course": "All India Senior School Examination",
-      "score": "89.4%",
-      "inst": "Jawahar Navodaya Vidyalaya,Washim",
-      "board": "CBSE Chennai",
+      "course": "Higher Secondary Education",
+      "score": "82.15%",
+      "inst": "Kasturbai Walchand College,Sangli",
+      "board": "Shivaji University",
       "courses": [
         {
-          "courseCode": "041",
-          "courseName": "Mathemactics",
-          "courseScore": "86/100",
+          "courseCode": "040",
+          "courseName": "Mathemactics & Statistics",
+          "courseScore": "94/100",
           "sn": 1
         },
         {
-          "courseCode": "042",
+          "courseCode": "054",
           "courseName": "Physics",
-          "courseScore": "87/100",
+          "courseScore": "93/100",
           "sn": 2
         },
         {
-          "courseCode": "043",
+          "courseCode": "055",
           "courseName": "Chemistry",
-          "courseScore": "86/100",
+          "courseScore": "75/100",
           "sn": 3
-        },
-        {
-          "courseCode": "083",
-          "courseName": "Computer Science",
-          "courseScore": "94/100",
-          "sn": 4
         }
       ]
     },
     {
-      "periodStart": "April 2011",
+      "periodStart":"",
       "periodEnd": "May 2012",
-      "course": "All India Secondary School Examination",
-      "score": "10.00 CGPA",
-      "inst": "Jawahar Navodaya Vidyalaya,Washim",
+      "course": "Primary and Secondary Education",
+      "score": "91.45%",
+      "inst": "Modern English School,Sangli",
       "board": "CBSE Chennai",
       "courses": [
         {
-          "courseCode": "041",
+          "courseCode": "071",
           "courseName": "Mathemactics",
-          "courseScore": "10/10",
+          "courseScore": "147/150",
           "sn": 1
         },
         {
-          "courseCode": "086",
-          "courseName": "Science",
-          "courseScore": "10/10",
+          "courseCode": "072",
+          "courseName": "Science & Technology",
+          "courseScore": "94/100",
           "sn": 2
         }
       ]
