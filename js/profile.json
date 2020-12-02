@@ -50,25 +50,25 @@
         {
           "courseCode": "Audit",
           "courseName": "Practical Data Science",
-          "courseScore":,
+          "courseScore": "",
           "sn": 5
         },
         {
           "courseCode": "Audit",
           "courseName": "Deep Learning for Computer Vision",
-          "courseScore":,
+          "courseScore": "",
           "sn": 6
         },
         {
           "courseCode": "Audit",
           "courseName": "Pattern Recognition and Neural Network",
-          "courseScore":,
+          "courseScore": "",
           "sn": 7
         },
         {
           "courseCode": "Audit",
           "courseName": "Machine Learning and Signal Processing",
-          "courseScore":,
+          "courseScore": "",
           "sn": 8
         }
       ]
@@ -293,7 +293,7 @@
     },
     {
       "periodStart":"",
-      "periodEnd": "May 2012",
+      "periodEnd": "Upto May 2012",
       "course": "Primary and Secondary Education",
       "score": "91.45%",
       "inst": "Modern English School,Sangli",
