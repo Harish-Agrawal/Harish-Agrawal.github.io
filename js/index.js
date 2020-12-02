@@ -244,7 +244,7 @@ $.get("js/profile.json",
 		$('title').html(pInfo.nick+'|Portfolio');
 		$('#name').html(pInfo.fname+' '+pInfo.lname); //+'<sub>&lt'+pInfo.nick+'/&gt</sub>');
 		$('#image img').attr('src','img/'+pInfo.myimg);
-		$('#contact').html(pInfo.mob+'</br>'+pInfo.email);
+		$('#contact').html(pInfo.email);
 		$('#summary').html(profile.summary);
 		$('#tabs').html(`					
 			<li class="tab col s2"><a href="#hello">Hello</a></li>
