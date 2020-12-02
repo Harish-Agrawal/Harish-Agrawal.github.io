@@ -2,6 +2,14 @@ div.content {
 	display: none;
 }
 
+h1{
+	margin: 1rem 0 1rem 0;
+    /*margin-top: 1rem;
+    margin-right: 0px;
+    margin-bottom: 1rem;
+    margin-left: 0px;*/
+}
+
 .progress {
 	background-color: white;
 	margin: 25% 0 0 0;
