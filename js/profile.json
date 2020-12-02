@@ -701,7 +701,7 @@
     {
       "name": "Programming",
       "icon": "programming.svg",
-      "sn": 1
+      "sn": 6
     },
     {
       "name": "Maths",
@@ -709,8 +709,8 @@
       "sn": 2
     },
     {
-      "name": "Armed Forces",
-      "icon": "soldier.svg",
+      "name": " Neuroscience",
+      "icon": " Neuroscience.svg",
       "sn": 3
     },
     {
@@ -726,27 +726,27 @@
     {
       "name": "Watermelon",
       "icon": "watermelon.svg",
-      "sn": 6
+      "sn": 10
     },
     {
       "name": "Astronomy",
       "icon": "astro.svg",
-      "sn": 7
+      "sn": 1
     },
     {
       "name": "Cycling",
       "icon": "cycling.svg",
-      "sn": 8
+      "sn": 7
     },
     {
       "name": "Trekking",
       "icon": "trek.svg",
-      "sn": 9
+      "sn": 8
     },
     {
-      "name": "Camping",
-      "icon": "tent.svg",
-      "sn": 10
+      "name": "Nature",
+      "icon": "plants.svg",
+      "sn": 9
     }
   ],
   "qoutes": [
