@@ -16,6 +16,64 @@
   },
   "educations": [
     {
+      "periodStart": "August 2019",
+      "periodEnd": "Present",
+      "course": "M.Tech Research Computational and Data Science",
+      "score": "8.6 CGPA",
+      "inst": "Indian Institute of Science, Banglore",
+      "board": "",
+      "courses": [
+        {
+          "courseCode": "DS284",
+          "courseName": "Numerical Linear Algebra",
+          "courseScore": "9/10",
+          "sn": 1
+        },
+        {
+          "courseCode": "DS221",
+          "courseName": "Introduction to Scalable Systems",
+          "courseScore": "10/10",
+          "sn": 2
+        },
+        {
+          "courseCode": "DS290",
+          "courseName": "Modelling and Simulation",
+          "courseScore": "7/10",
+          "sn": 3
+        },
+        {
+          "courseCode": "E3231",
+          "courseName": "Digital Systems Design with FPGAs",
+          "courseScore": "9/10",
+          "sn": 4
+        },
+        {
+          "courseCode": "Audit",
+          "courseName": "Practical Data Science",
+          "courseScore":,
+          "sn": 5
+        },
+        {
+          "courseCode": "Audit",
+          "courseName": "Deep Learning for Computer Vision",
+          "courseScore":,
+          "sn": 6
+        },
+        {
+          "courseCode": "Audit",
+          "courseName": "Pattern Recognition and Neural Network",
+          "courseScore":,
+          "sn": 7
+        },
+        {
+          "courseCode": "Audit",
+          "courseName": "Machine Learning and Signal Processing",
+          "courseScore":,
+          "sn": 8
+        }
+      ]
+    },
+    {
       "periodStart": "July 2014",
       "periodEnd": "May 2018",
       "course": "B.Tech Electronics Engineering",
@@ -664,7 +722,7 @@
       "link": "https://github.com/moghya/toGithub"
     }
   ],
-  "summary": "<p>Hello, I'm a researcher in field of Computational and Data Science and B.Tech Electronics Engineering graduate. I'm currently working on deep learning models to solve Computer Vision problems. </p>\n<p>I'm amazed by the field of Artificial Intelligence and the impact it is making on people lives. I seek to learn and apply all of it such that it will help us solve real world problems.</p>",
+  "summary": "<p>Hello, I'm a researcher in field of Computational and Data Science. I'm currently working on deep learning models to solve Computer Vision problems. </p>\n<p>I'm amazed by the field of Artificial Intelligence and the impact it is making on people lives. I seek to learn and apply all of it such that it will help us solve real world problems.</p>",
   "profileLinks": [
     {
       "name": "Github",
@@ -754,7 +812,7 @@
     "Wherever you go, There you are.",
     "Only when mistakes hurt a person, they trasform the person.",
     "The greatest pride is to grow in your own eyes.",
-    "Thinking conditionally is a condition for thinking."
+    "The purpose of computation is insight, not numbers."
   ],
-  "helloText": "<p>Dear Visitor, Thank you for visiting my webspace.</p>\n<p>I'm pursuing M.Tech Research in Computational and Data Science department at <a href='http://cds.iisc.ac.in/'>Indian Institute of Science</a>, Banglore</p>\n<p>I have graduated from <a href='http://walchandsangli.ac.in'>Walchand College of Engineering</a>, Sangli with B.Tech in Electronics Engineering.</p>\n\n<p>I'm interested in Machine Learning, Deep Learning, Mathematics, VLSI and Parallel & Distributed Computing. I also like fields of astronomy, neuroscience, science of mindfulness and philosophy:)</p>\n\n<p>Do we have something in common?</br>If yes, let's have a talk about it and grow together.</p> <p> We don't have anything in common?</br>That's fine,please introduce me something that I'm missing.</p>"
+  "helloText": "<p>Dear Visitor, Thank you for visiting my webspace.</p>\n<p>I'm pursuing M.Tech Research in Computational and Data Science department at <a href='http://cds.iisc.ac.in/'>Indian Institute of Science</a>, Banglore.</p>\n<p>I have graduated from <a href='http://walchandsangli.ac.in'>Walchand College of Engineering</a>, Sangli with B.Tech in Electronics Engineering.</p>\n\n<p>I'm interested in Machine Learning, Deep Learning, Mathematics, VLSI and Parallel & Distributed Computing. I also like fields of astronomy, neuroscience, science of mindfulness and philosophy :)</p>\n\n<p>Do we have something in common?</br>If yes, let's have a talk about it and grow together.</p> <p> We don't have anything in common?</br>That's fine,please introduce me something that I'm missing.</p>"
 }
