@@ -204,14 +204,14 @@ function loadMoghysSays() {
 		<div class="row">
 			Would you like to have your own portfolio in this template ? It's pretty easy. You can fork my <a href="https://github.com/Harish-Agrawal/Harish-Agrawal.github.io">portfolio repository</a> or can check <a href="https://github.com/moghya">moghya</a> github account for more details. 
 			All the content on this website is dynamically loaded from JSON data.
-			Fork this <a href="https://github.com/moghya/moghya.github.io/">repo</a> on github and edit js/profile.json for adding your data.
+			Fork the repository on github and edit js/profile.json for adding your data.
 		</div>
 	</div>
 	<div class="col m6">
 		<h6>Warm Gratitudes</h6>
 		<div class="row">
 			<div class="col m3 s3"><a href="https:https://pages.github.com/">Github Pages</a></div>
-			<div class="col m3 s3"><a href="https://stackoverflow.com/">Stack Overflow</a></div>
+			<div class="col m3 s3"><a href="http://www.mattboldt.com/demos/typed-js/">TypedJs</a></div>
 			<div class="col m3 s3"><a href="https://jquery.com/">jQuery</a></div>
 			<div class="col m3 s3"><a href="http://materializecss.com/">Materialize</a></div>
 		</div>
@@ -223,7 +223,7 @@ function loadMoghysSays() {
 		</div>
 		<div class="row">
 			<div class="col m3 s3"><a href="http://noraesae.github.io/perfect-scrollbar/">Perfect Scrollbar</a></div>
-			<div class="col m3 s3"><a href="http://www.mattboldt.com/demos/typed-js/">TypedJs</a></div>					
+			<div class="col m3 s3"><a href="https://stackoverflow.com/">Stack Overflow</a></div>					
 			<div class="col m3 s3"><a href="https://daneden.github.io/animate.css/">Animate.CSS</a></div>
 			<div class="col m3 s3"><a href="http://t4t5.github.io/sweetalert/">Sweetalert</a></div>
 		</div>
