@@ -574,6 +574,7 @@
         "Drone",
         "Nimble",
         "Quadcopter",
+        "Black_Box_Analysis",
         "Autonomous"
       ],
       "shortInfo": "In some situations it is impossible for humans to explore a certain terrain without risking life. Unmanned aerial vehicles (UAV) can provide a very simplified way to access such areas, giving useful visual aid to the rescue team. Even though being such a useful piece of technology it is very costly. Our aim was to build a drone with minimum cost and adequate features and implement the whole system.",
@@ -581,20 +582,22 @@
     },
     {
       "sn": 2,
-      "projectTitle": "prowessIndex",
-      "periodStart": "June 2017",
-      "periodEnd": "June 2017",
+      "projectTitle": "Nyquist Sampling Theorem",
+      "periodStart": "August 2016",
+      "periodEnd": "December 2016",
       "toolsUsed": [
-        "python",
-        "flask",
-        "pandas"
+        "Eagle EDA tool",
+        "Soldering Gun",
+        "Digital Storage Oscilloscope",
+        "Digital Signal Generator"
       ],
       "tags": [
-        "python",
-        "data analytics"
+        "PCB",
+        "NyquistTheorem",
+        "CODEC"
       ],
-      "shortInfo": "This is a simple flask web app implementation of a paper that I'm writing 'Making Sense of Numbers'. This paper proposes method for deriving inferences about prowessness of a stduent using attained graded.",
-      "link": "http://novatoscript.pythonanywhere.com/"
+      "shortInfo": "Nyquist Sampling theroem is one of most important theorem in Digital Signal Processing field. In this project we wanted to see what happens to signal when it is sampled at different sampling rates. Main aim was to learn EDA tools and build our own hand-made PCB(Printed Circuit Board). ",
+      "link": "https://www.notion.so/Nyquist-Sampling-Theorem-fb960179b12e49479db1797f2d23ad92"
     },
     {
       "sn": 7,
