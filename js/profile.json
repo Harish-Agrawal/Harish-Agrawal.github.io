@@ -541,21 +541,23 @@
       "link": ""
     },
     {
-      "sn": 3,
-      "projectTitle": "dsalglib ",
-      "periodStart": "May 2016",
-      "periodEnd": "Present",
+      "sn": 2,
+      "projectTitle": "RTOS Kit and Serial to USB(/SD card) Standalone Module",
+      "periodStart": "January 2017",
+      "periodEnd": "July 2017",
       "toolsUsed": [
-        "c++"
+        "Keil uVision 4",
+        "Vinculum II IDE",
+        "Eagle EDS Tool",
+        "Soldering Station"
       ],
       "tags": [
-        "ds",
-        "algo",
-        "template",
-        "c++"
+        "RTOS",
+        "Parallel Programming",
+        "Universal Module"
       ],
-      "shortInfo": "Its a ready to use data structures and algorithms c++ template library.Many useful data structures and algorithms are implemented . One should just focus on his/her project necessity and dsalglib will take care of data structures and algorithms.",
-      "link": "http://moghya.me/dsalglib/"
+      "shortInfo": "Real time operating systems (RTOS) are used in environments where a large number of events, mostly external to the computer system, must be accepted and processed in a short time or within certain deadlines. Such applications are industrial control, telephone switching equipment, flight control, and real time simulations. Project main was to create RTOS kit for Electronics Department of WCE so that students can perform RTOS based practicals. Another part of the project was to create a hand sized standalone module which can accept serial data using RX/TX lines and process-convert them into USB/SD card data. This is specifically an important application as all controllers however big or small have serial input and ouput ",
+      "link": "https://www.notion.so/RTOS-Kit-Vinculum-module-635c779e1e3e491dbeb30e7e5939ba6e"
     },
     {
       "sn": 1,
@@ -574,20 +576,20 @@
         "Drone",
         "Nimble",
         "Quadcopter",
-        "Black_Box_Analysis",
+        "Data_Analysis",
         "Autonomous"
       ],
       "shortInfo": "In some situations it is impossible for humans to explore a certain terrain without risking life. Unmanned aerial vehicles (UAV) can provide a very simplified way to access such areas, giving useful visual aid to the rescue team. Even though being such a useful piece of technology it is very costly. Our aim was to build a drone with minimum cost and adequate features and implement the whole system.",
       "link": "https://www.notion.so/NIMBLE-The-Unmanned-Aerial-Vehicle-14012aeca5ad4975b44f381627c46494"
     },
     {
-      "sn": 2,
+      "sn": 3,
       "projectTitle": "Nyquist Sampling Theorem",
       "periodStart": "August 2016",
       "periodEnd": "December 2016",
       "toolsUsed": [
         "Eagle EDA tool",
-        "Soldering Gun",
+        "Soldering Station",
         "Digital Storage Oscilloscope",
         "Digital Signal Generator"
       ],
