@@ -97,7 +97,7 @@ h1{
 
 .tabs-content.carousel .carousel-item{
 	height: 100%;
-/* 	overflow-y: scroll; */
+	overflow-y: scroll;
 }
 
 
