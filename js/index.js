@@ -145,7 +145,7 @@ function onWindowResize(){
 }
 
 
-// $(window).resize(onWindowResize);
+$(window).resize(onWindowResize);
 
 var profile;
 swal({
