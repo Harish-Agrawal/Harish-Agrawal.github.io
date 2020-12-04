@@ -568,10 +568,11 @@
         "Betaflight",
         "INAV",
         "Arduino",
-        "Sensors:Accelerometer, Gyroscope, GPS, Barometer, Magnetometer"
+        "Inertial Measurement Unit"
       ],
       "tags": [
         "Drone",
+        "Nimble"
         "Quadcopter",
         "Autonomous"
       ],
