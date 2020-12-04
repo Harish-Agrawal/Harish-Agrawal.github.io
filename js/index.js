@@ -141,6 +141,7 @@ function onWindowResize(){
 	}
 	$('#skills div.m2').css('height',$('#skills div.m2').css('width'));
 	$('#image img').css('height',$('#image img').css('width'));
+	console.log(`Har $(tabs[0].style.height)`)
 }
 
 
