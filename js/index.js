@@ -128,13 +128,13 @@ function onBodyLoad(){
 		'accordion' : true
 	});
 	$('#tabs').tabs({ 'swipeable': true });
-// 	onWindowResize();
+	onWindowResize();
 }
 
 function onWindowResize(){
 	const heightPageA = parseInt($('#pagea').css('height').replace('px',''),10);
 	const tabContentHeight = Math.max(heightPageA-48,(window.innerHeight - 50)) + 'px';
-	// console.log(`${document.getElementsByClassName('tabs-content carousel initialized')[0].style.height } to ${tabContentHeight}`);
+	console.log(`${document.getElementsByClassName('tabs-content carousel initialized')[0].style.height } to ${tabContentHeight}`);
 	const tabs = document.getElementsByClassName('tabs-content carousel initialized');
 	if (tabs && tabs[0]) {
 		tabs[0].style.height = tabContentHeight;
@@ -144,7 +144,7 @@ function onWindowResize(){
 }
 
 
-$(window).resize(onWindowResize);
+// $(window).resize(onWindowResize);
 
 var profile;
 swal({
