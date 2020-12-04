@@ -128,7 +128,7 @@ function onBodyLoad(){
 		'accordion' : true
 	});
 	$('#tabs').tabs({ 'swipeable': true });
-	onWindowResize();
+// 	onWindowResize();
 }
 
 function onWindowResize(){
