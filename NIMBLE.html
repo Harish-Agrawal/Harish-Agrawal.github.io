@@ -1,0 +1,635 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>&quot;NIMBLE&quot; - The Unmanned Aerial Vehicle</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="14012aec-a5ad-4975-b44f-381627c46494" class="page sans"><header><img class="page-cover-image" src="NIMBLE/92DC376D-BFD1-40B6-88B5-FF16AF9850B2.jpeg" style="object-position:center 21.030000000000005%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">✈️</span></div><h1 class="page-title">&quot;NIMBLE&quot; - The Unmanned Aerial Vehicle</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2803142e-248a-4040-94b0-396b6a3848d4"><div style="font-size:1.5em"><span class="icon">👷🏻‍♂️</span></div><div style="width:100%">Contributors 
+- Harish Agrawal
+- Pushkar Shirur
+- Neha Pakhare</div></figure><p id="268c50be-ad4f-4906-88b4-b7fc5db0471b" class="">
+</p><blockquote id="50f3eb07-bada-48a7-9e88-9c202f5b0324" class=""><mark class="highlight-orange_background"><a href="https://drive.google.com/drive/folders/1T_zDdO9hk1uOnBdRF1gB_lSnXX3QPdVN?usp=drive_open">NIMBLE report and some videos link.</a></mark></blockquote><h1 id="1cd67ddb-b0e8-411e-9288-58cdb58aec44" class="">Introduction</h1><p id="cb5562bf-192e-4aa3-9194-9dbabe136690" class="">          <mark class="highlight-purple">Man has always dreamed of flying.</mark> In the past, it was only the birds which could achieve this feat. Until some actually realized this dream, starting from <mark class="highlight-red">Archimedes</mark> and finally to the <mark class="highlight-red">Wright brothers</mark> who gave this wonderful ability in the hands of mankind. A new world previously unexplored now craved for attention. Even though there were significant development after that, it was and is still a costly affair and dream for a common man. The sound of an aerial vehicle always makes us turn our attention and stare with awe.</p><p id="c630c1bd-362a-48cb-a218-21e6079fb4ab" class="">          Today, thanks to the research and development which has borne fruits for those dreamers, now it is possible to afford aerial vehicles. Although initially they could not take you with them. Until recently with the advent of FPV technology, you can get a sensation of flight without worrying about the hazards posed by air transport.</p><h1 id="c99de64b-4ccd-456b-bb1f-10561f042658" class="">Objective</h1><div id="cc9c5648-979a-4a28-a5c5-baea2e37796d" class="column-list"><div id="0613a264-e593-4e1c-88ac-367dc83b8522" style="width:50%" class="column"><p id="e4cf7f0a-3444-446c-a8ab-b39948ced358" class="">Our primary objective was to build a cost-effective, light-weight and reliable Unmanned Aerial Vehicle (UAV) capable of carrying a payload. Each of the components have been chosen with rigorous survey in order to provide maximum throughput with minimal cost. Weight is a crucial factor when building any aerial vehicle. It can be a deciding factor for the overall cost since it determines the specifications of the power system. Utmost care was taken to ensure stability, by providing a dedicated floating-point processor for precise PID calculations.</p><p id="6fd0fcc3-1b57-4ff9-adbb-9328158f1241" class="">The secondary objective was to make it full-fledged, laden with the latest technology available in the market and finally making it capable of autonomous flights. </p><p id="0fe68ea7-d597-44f3-91f0-cfe288623cb2" class="">
+</p><p id="1eb3a3c8-e9e8-448b-9465-cfc349d4a321" class="">Implemeted features like:</p><ul id="1d459636-b1f2-463a-ad1d-8241ec374dbc" class="bulleted-list"><li>Return to home.</li></ul><ul id="ee6e642b-0981-4818-adea-4867af67ebed" class="bulleted-list"><li>Altitude/position hold.</li></ul><ul id="f0ae2d2c-b664-4d6c-9e8b-1a1fc5c49032" class="bulleted-list"><li>Constant monitoring of flight conditions using Telemetry.</li></ul><ul id="3d36443a-6d40-4af0-9e35-2a9de73f31b2" class="bulleted-list"><li>Live video streaming for surveillance.</li></ul><ul id="52285d3c-d59f-4a8f-b328-e49090268d40" class="bulleted-list"><li>Mission planning – setting waypoints.</li></ul><p id="ed6707fc-0067-444d-b917-00f40fc7f8b9" class="">
+</p><p id="44bf8f5a-c75f-43c5-bd77-5e437371d856" class="">We are trying to forefront the upcoming field of unmanned aerial vehicles (UAV) so as to provide a benchmark for further development in this area.</p></div><div id="ae529685-ad9c-4700-a5d6-cb671bdd67fc" style="width:50%" class="column"><figure id="1c82ca08-dff6-44d3-8dc1-93fdf5c48912" class="image"><a href="NIMBLE/40CBD30A-E7CC-4572-B6EF-9F2EB7EFB4F9.jpeg"><img style="width:909px" src="NIMBLE/40CBD30A-E7CC-4572-B6EF-9F2EB7EFB4F9.jpeg"/></a><figcaption>                                               Block Diagram</figcaption></figure></div></div><hr id="6a77eada-1e5b-4959-9623-099ab14648a5"/><p id="7b5e6470-0dc5-4cf1-9d66-d46e7e2a59fe" class="">
+</p><h1 id="dad0d5f7-4f76-4cbe-a7c6-9bdedbc5739f" class="">Few Images</h1><div id="01fa9658-dbf1-4366-8eca-6268d5e8faf5" class="column-list"><div id="e7889a26-f004-4842-a316-7f7257730c38" style="width:50%" class="column"><figure id="75f7d917-3b01-4716-956e-13e123217e61" class="image"><a href="NIMBLE/Assemble1.png"><img style="width:576px" src="NIMBLE/Assemble1.png"/></a><figcaption>                         Assembly(Fligh controller and Electronic Speed Controller)</figcaption></figure></div><div id="b737277d-5531-46d8-93a9-5d7f69666943" style="width:50%" class="column"><figure id="9af5650f-7ea6-4222-bba5-6afced5f2018" class="image"><a href="NIMBLE/94341248-2120-413D-93B1-3562B5B3FF7A.jpeg"><img style="width:672px" src="NIMBLE/94341248-2120-413D-93B1-3562B5B3FF7A.jpeg"/></a><figcaption>Final Assemble NIMBLE (With GPS and Magnetometer on top)</figcaption></figure></div></div><figure id="0cbea867-a813-4685-8b61-fee55e0c3170" class="image"><a href="NIMBLE/Assemble2.png"><img style="width:528px" src="NIMBLE/Assemble2.png"/></a><figcaption>           Assembly (Frame with moters, ESC and Flight controller attached)</figcaption></figure><figure id="fc70af56-37f1-43a7-8fc8-46b46e6c82be" class="image"><a href="NIMBLE/PidTuning.png"><img style="width:528px" src="NIMBLE/PidTuning.png"/></a><figcaption>                                                  PID Tuning Setup</figcaption></figure><p id="7cd8a4aa-1197-4389-81e4-0e7284f32966" class="">
+</p><h1 id="ae3c81f1-fc1a-432f-add9-11793c71f6cc" class="">Conclusions</h1><ul id="4c56b89c-c40c-491b-83e3-77dd5d5a7bef" class="bulleted-list"><li>We first tested and evaluated all the software related work on a small quadcopter which cost around 7-9k rs.</li></ul><ul id="083190d9-fe01-4577-b93a-ab9cf2b1041d" class="bulleted-list"><li>We were able to procure and assemble various components to build Nimble.</li></ul><ul id="faef9752-5d22-4542-bcb0-c5e37e85698b" class="bulleted-list"><li>Performed course PID(Proportional Integral Derivative) tuning indoor and then did fine tuning by flying outdoor.</li></ul><ul id="a3b2310b-c1c7-40f7-a29d-f869ba1cc5ea" class="bulleted-list"><li>Analyzed black-box data for any discripensies due to vibrational noise. This was crucial so as to know exactly how Nimble is flying in terms of power efficiency and component handling.</li></ul><ul id="6f0a750f-16f4-464e-b3bf-e5e3f03c3f01" class="bulleted-list"><li>From the black-box analysis, we understood that due to high-frequency noise Flight Controller(FC) was trying hard to keep Nimble at one place forcing ESC to switch rapidly thereby causing motors to heat significantly. Applied digital filtering, soft mounting motors as well as FC to reduce the noise reaching FC.  </li></ul><ul id="99696041-3feb-4205-af91-8175de8255f3" class="bulleted-list"><li>We were able to build Nimble in 30-35k rs.</li></ul></div></article></body></html>
