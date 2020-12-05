@@ -270,3 +270,5 @@ $.get("js/profile.json",
 		console.log('body loaded calling');
 		onBodyLoad();
 });
+
+$(window).resize(onWindowResize);
