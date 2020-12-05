@@ -269,6 +269,7 @@ $.get("js/profile.json",
 		loadMoghysSays();
 		console.log('body loaded calling');
 		onBodyLoad();
+		onWindowResize();
 });
 
-$(window).resize(onWindowResize);
+// $(window).resize(onWindowResize);
