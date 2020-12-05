@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 function loadSkills(skills){
 		var i=0,j;
 		var skillsInnerHTML='';
@@ -31,7 +33,7 @@ function loadProjects(projects){
 		}
 		toolsUsed+='</div>';
 		project+=toolsUsed;
-		tags = '<div class=row">'
+		tags = '<div class=row">';
 		for(j=0;j<projects[i].tags.length;j++)tags+='<span class="tag">#'+projects[i].tags[j]+'</span>&nbsp';
 		if(projects[i].link!="#") tags+='<a href="'+projects[i].link+'" target="_blank"><i class="material-icons right">language</i></a>';
 		tags+='</div>';
@@ -93,7 +95,7 @@ function loadLinks(profileLinks){
 	});
 	var profileLinksInnerHTML = '';
 	while(i<profileLinks.length){
-		profileLinksInnerHTML+='<div class="row">'
+		profileLinksInnerHTML+='<div class="row">';
 		for(j=i;j<profileLinks.length&&j<i+5;j++){
 			profileLinksInnerHTML+='<div class="col s2">													<a href="'+profileLinks[j].link+'" target="_blank" >					<img src="img/'+profileLinks[j].icon+'" alt="'+profileLinks[j].name+'">															</a></div>';
 		}
@@ -110,7 +112,7 @@ function loadLikes(likes){
 	var i;
 	var likesInnerHTML = '<h4>I like</h4>';
 	for(i=0;i<likes.length;i++){
-		likesInnerHTML+='<object type="image/svg+xml" data="img/'+likes[i].icon+'">'+likes[i].name+'</object>'
+		likesInnerHTML+='<object type="image/svg+xml" data="img/'+likes[i].icon+'">'+likes[i].name+'</object>';
 	}
 	$('#likes').html(likesInnerHTML);
 }
@@ -141,7 +143,7 @@ function onWindowResize(){
 	}
 	$('#skills div.m2').css('height',$('#skills div.m2').css('width'));
 	$('#image img').css('height',$('#image img').css('width'));
-	console.log(`Har ${tabs[0].style.height}`)
+	console.log(`Har ${tabs[0].style.height}`);
 }
 
 
