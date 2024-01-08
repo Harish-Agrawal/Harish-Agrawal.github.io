@@ -135,9 +135,9 @@ function onBodyLoad(){
 
 function onWindowResize(){
 	const heightPageA = parseInt($('#pagea').css('height').replace('px',''),10);
-	const tabContentHeight = Math.max(heightPageA-48,(window.innerHeight - 50)) + 'px';
-	console.log(`${document.getElementsByClassName('tabs-content carousel initialized')[0].style.height } to ${tabContentHeight}`);
 	const tabs = document.getElementsByClassName('tabs-content carousel initialized');
+	const tabContentHeight = Math.max(heightPageA-48,(window.innerHeight - 50)) + 'px';
+	console.log(`${tabs[0].style.height} to ${tabContentHeight}`);
 	if (tabs && tabs[0]) {
 		tabs[0].style.height = tabContentHeight;
 	}
