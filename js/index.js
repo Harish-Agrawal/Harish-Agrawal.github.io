@@ -124,12 +124,18 @@ function loadBlog() {
 
 function onBodyLoad(){
 	console.log('body loaded called');
-	$('div.progress').css('display','none');
-	$('div.content').css('display','block');
+	
+	// Initialize collapsibles first
 	$('.collapsible').collapsible({
 		'accordion' : true
 	});
+	
+	// Initialize tabs
 	$('#tabs').tabs({ 'swipeable': true });
+	
+	// Hide progress bar and show content after UI components are initialized
+	$('div.progress').css('display','none');
+	$('div.content').css('display','block');
 }
 
 function onWindowResize(){
@@ -274,19 +280,17 @@ $(document).ready(function() {
 				// Initialize UI components after content is loaded
 				onBodyLoad();
 				
-				// Use setTimeout to ensure DOM is fully rendered before resizing
+				// Wait for tabs to be fully initialized before final adjustments
 				setTimeout(function() {
 					onWindowResize();
 					console.log('Initial resize completed');
-				}, 300);
-				
-				// Show welcome alert after everything is loaded
-				setTimeout(function() {
+					
+					// Show welcome alert only after everything is stable
 					swal({
 						title: "Hello World!!!",
 						text: "Hello visitor, you have landed upon little webspace of Harish. I hope you're doing well."
 					});
-				}, 500);
+				}, 800);
 				
 			} catch (error) {
 				console.error('Error rendering profile:', error);
