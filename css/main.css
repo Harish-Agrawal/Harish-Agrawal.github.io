@@ -103,6 +103,8 @@ div.content {
 	padding: 2%;
 	border-radius: 50%;
 	font-size: 1.15rem;
+	/* Ensure square shape */
+	aspect-ratio: 1 / 1;
 }
 
 .collapsible-header,.collapsible-body{
@@ -157,6 +159,9 @@ object{
 	border: solid white 3px;
 	margin-left: 30.25%;
 	margin-right: 30.25%;
+	/* Ensure square shape */
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
 }
 
 #links svg path{
@@ -199,7 +204,7 @@ body{
 	color: white;
 	font-family: "Lekton", monospace;
 	font-size: 1.15rem;
-	font-display: auto;
+	font-display: swap; /* Changed from auto to swap for better loading */
 }
 
 h6 {
@@ -226,4 +231,21 @@ button:hover {
 
 .swal-button-container {
 	display: inline;
+}
+
+/* Add some responsive improvements */
+@media only screen and (max-width: 600px) {
+	#name {
+		font-size: 2rem;
+	}
+	
+	#skills .m2 {
+		width: 30%;
+		margin: 1.5%;
+	}
+	
+	object {
+		width: 22%;
+		margin: 1.5%;
+	}
 }

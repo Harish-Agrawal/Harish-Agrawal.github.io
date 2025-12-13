@@ -130,47 +130,34 @@ function onBodyLoad(){
 		'accordion' : true
 	});
 	$('#tabs').tabs({ 'swipeable': true });
-	// onWindowResize();
 }
 
 function onWindowResize(){
 	const heightPageA = parseInt($('#pagea').css('height').replace('px',''),10);
-	const tabs = document.getElementsByClassName('tabs-content carousel initialized');
 	const tabContentHeight = Math.max(heightPageA-48,(window.innerHeight - 50)) + 'px';
-	console.log(`${tabs[0].style.height} to ${tabContentHeight}`);
+	console.log(`Resizing tabs-content to ${tabContentHeight}`);
+	const tabs = document.getElementsByClassName('tabs-content carousel initialized');
 	if (tabs && tabs[0]) {
 		tabs[0].style.height = tabContentHeight;
 	}
-	$('#skills div.m2').css('height',$('#skills div.m2').css('width'));
-	$('#image img').css('height',$('#image img').css('width'));
-	console.log(`Har ${tabs[0].style.height}`);
+	// Ensure skill items are square
+	$('#skills div.m2').each(function() {
+		$(this).css('height', $(this).css('width'));
+	});
+	// Ensure profile image is square
+	$('#image img').each(function() {
+		$(this).css('height', $(this).css('width'));
+	});
 }
 
-
-$(window).resize(onWindowResize);
+// Debounce resize event to avoid performance issues
+var resizeTimeout;
+$(window).resize(function() {
+	clearTimeout(resizeTimeout);
+	resizeTimeout = setTimeout(onWindowResize, 100);
+});
 
 var profile;
-swal({
-		title: "Hello World!!!",
-		text: "Hello visitor, you have landed upon little webspace of Harish. I hope you're doing well."
-		// buttons: ["Nope, I'm just looking around.", "Yes, I'm hiring :)"]
-		// buttons: {
-		// 	cancel: {
-		// 	  text: "Nope.",
-		// 	  value: false,
-		// 	  visible: true,
-		// 	  className: "button-cancel",
-		// 	  closeModal: true,
-		// 	},
-		// 	confirm: {
-		// 	  text: "Yes, I'm hiring.",
-		// 	  value: true,
-		// 	  visible: true,
-		// 	  className: "button-confirm",
-		// 	  closeModal: true
-		// 	}
-		// }
-});
 //.then((value)=>{
 // 	if(value===true) {
 // 		swal({
@@ -234,44 +221,87 @@ function loadMoghysSays() {
 	$('#moghyaSays').html(moghyaSaysInnerHtml);
 }
 
-$.get("js/profile.json", 
-	function(data, status){
-		console.log('Got profile:',data,' \nwith status:',status);
-		if(status!=="success") {
-			window.location.href = "/error.html";
+// Wait for DOM to be fully loaded before initializing
+$(document).ready(function() {
+	console.log('Document ready, loading profile data...');
+	
+	// Load profile data with proper error handling and timeout
+	$.ajax({
+		url: "js/profile.json",
+		dataType: "json",
+		timeout: 10000, // 10 second timeout
+		success: function(data) {
+			console.log('Profile data loaded successfully');
+			profile = data;
+			
+			try {
+				// Populate basic information
+				var pInfo = profile.personalInfo;
+				$('title').html(pInfo.nick+'|Portfolio');
+				$('#name').html(pInfo.fname+' '+pInfo.lname);
+				$('#image img').attr('src','img/'+pInfo.myimg);
+				$('#contact').html(pInfo.email);
+				$('#summary').html(profile.summary);
+				
+				// Setup tabs
+				$('#tabs').html(`					
+					<li class="tab col s2"><a href="#hello">Hello</a></li>
+					<li class="tab col s2"><a href="#skills">Skills</a></li>
+					<li class="tab col s2"><a href="#projects">Projects</a></li>
+					<li class="tab col s3"><a href="#experience">Experience</a></li>
+					<li class="tab col s3"><a href="#education">Education</a></li>
+				`);
+				
+				// Setup typed text
+				$('#believe').html('<h4>I believe</h4><span></span>');
+				const typed = new Typed('#believe span', {
+					strings: profile.qoutes,
+					typeSpeed: 40,
+					cursorChar:"_",
+					loop:true
+				});
+				
+				// Load all sections
+				loadLikes(profile.likes);
+				$('#helloText').html(profile.helloText);
+				loadLinks(profile.profileLinks);
+				loadSkills(profile.skills);
+				loadProjects(profile.projects);
+				loadWorks(profile.experince);
+				loadEducations(profile.educations);
+				loadMoghysSays();
+				
+				// Initialize UI components after content is loaded
+				onBodyLoad();
+				
+				// Use setTimeout to ensure DOM is fully rendered before resizing
+				setTimeout(function() {
+					onWindowResize();
+					console.log('Initial resize completed');
+				}, 300);
+				
+				// Show welcome alert after everything is loaded
+				setTimeout(function() {
+					swal({
+						title: "Hello World!!!",
+						text: "Hello visitor, you have landed upon little webspace of Harish. I hope you're doing well."
+					});
+				}, 500);
+				
+			} catch (error) {
+				console.error('Error rendering profile:', error);
+				showError('Error displaying profile information. Please try refreshing the page.');
+			}
+		},
+		error: function(xhr, status, error) {
+			console.error('Failed to load profile data:', status, error);
+			showError('Failed to load profile data. Please check your internet connection and try again.');
 		}
-		profile = data;
-		var pInfo = profile.personalInfo;
-		$('title').html(pInfo.nick+'|Portfolio');
-		$('#name').html(pInfo.fname+' '+pInfo.lname); //+'<sub>&lt'+pInfo.nick+'/&gt</sub>');
-		$('#image img').attr('src','img/'+pInfo.myimg);
-		$('#contact').html(pInfo.email);
-		$('#summary').html(profile.summary);
-		$('#tabs').html(`					
-			<li class="tab col s2"><a href="#hello">Hello</a></li>
-			<li class="tab col s2"><a href="#skills">Skills</a></li>
-			<li class="tab col s2"><a href="#projects">Projects</a></li>
-			<li class="tab col s3"><a href="#experience">Experience</a></li>
-			<li class="tab col s3"><a href="#education">Education</a></li>
-		`);
-		$('#believe').html('<h4>I believe</h4><span></span>');
-		const typed = new Typed('#believe span', {
-			strings: profile.qoutes,
-			typeSpeed: 40,
-			cursorChar:"_",
-			loop:true
-		});
-		loadLikes(profile.likes);
-		$('#helloText').html(profile.helloText);
-		loadLinks(profile.profileLinks);
-		loadSkills(profile.skills);
-		loadProjects(profile.projects);
-		loadWorks(profile.experince);
-		loadEducations(profile.educations);
-		loadMoghysSays();
-		console.log('body loaded calling');
-		onBodyLoad();
-		onWindowResize();
+	});
 });
 
-// $(window).resize(onWindowResize);
+function showError(message) {
+	$('div.progress').css('display','none');
+	$('div.content').html('<div class="center-align" style="margin-top: 20%; padding: 20px;"><h4>Oops!</h4><p>' + message + '</p><button class="btn" onclick="location.reload()">Retry</button></div>');
+	$('div.content').css('display','block');
+}
