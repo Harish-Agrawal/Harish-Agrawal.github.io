@@ -126,10 +126,15 @@ function onBodyLoad(){
 	console.log('body loaded called');
 	$('div.progress').css('display','none');
 	$('div.content').css('display','block');
-	$('.collapsible').collapsible({
-		'accordion' : true
-	});
-	$('#tabs').tabs({ 'swipeable': true });
+	
+	// Use setTimeout to ensure DOM is ready for initialization
+	setTimeout(function() {
+		$('.collapsible').collapsible({
+			'accordion' : true
+		});
+		$('#tabs').tabs({ 'swipeable': true });
+		console.log('Tabs initialized');
+	}, 50);
 }
 
 function onWindowResize(){
@@ -274,19 +279,19 @@ $(document).ready(function() {
 				// Initialize UI components after content is loaded
 				onBodyLoad();
 				
-				// Small delay to ensure tabs are fully initialized
+				// Wait for tabs to fully initialize and stabilize
 				setTimeout(function() {
 					onWindowResize();
 					console.log('Initial resize completed');
-				}, 100);
-				
-				// Show welcome alert after a longer delay
-				setTimeout(function() {
-					swal({
-						title: "Hello World!!!",
-						text: "Hello visitor, you have landed upon little webspace of Harish. I hope you're doing well."
-					});
-				}, 1000);
+					
+					// Additional delay before showing alert to ensure everything is stable
+					setTimeout(function() {
+						swal({
+							title: "Hello World!!!",
+							text: "Hello visitor, you have landed upon little webspace of Harish. I hope you're doing well."
+						});
+					}, 500);
+				}, 500);
 				
 			} catch (error) {
 				console.error('Error rendering profile:', error);
