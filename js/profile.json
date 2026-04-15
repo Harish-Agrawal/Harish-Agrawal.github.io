@@ -17,9 +17,9 @@
   "educations": [
     {
       "periodStart": "August 2019",
-      "periodEnd": "Present",
+      "periodEnd": "2022",
       "course": "M.Tech Research Computational and Data Science",
-      "score": "8.6 CGPA",
+      "score": "8.7 CGPA",
       "inst": "Indian Institute of Science, Banglore",
       "board": "",
       "courses": [
@@ -379,6 +379,16 @@
       "sn": 13,
       "name": "MATLAB",
       "icon": "img/matlab.svg"
+    },
+    {
+      "sn": 14,
+      "name": "TensorFlow",
+      "icon": "img/tensorflow.svg"
+    },
+    {
+      "sn": 15,
+      "name": "PySpark",
+      "icon": "img/spark.svg"
     }
   ],
   "experince": [
@@ -401,48 +411,71 @@
       "organisation": "ELESA",
       "experience": "Learnt how to keep website up-to-date and also added few new ideas to make website one stop solution for everything related to ELESA",
       "type": "volunteer"
+    }
+  ],
+  "industryExperience": [
+    {
+      "sn": 1,
+      "workPosition": "Senior Applied AI/ML Associate",
+      "periodStart": "February 2025",
+      "periodEnd": "Present",
+      "organisation": "JP Morgan & Chase - Conversational AI Team",
+      "link": "https://www.jpmorganchase.com/",
+      "description": "Primarily involved in improving customer facing Chase Digital Assistant (CDA) chatbot.",
+      "projects": [
+        {
+          "title": "Improving Q&A System of CDA using Large Language Models",
+          "details": [
+            "Researching different methods to improve Q&A system of the chatbot specifically using LLMs as both a retriever and a generator in the RAG pipeline.",
+            "At retriever stage, first doing course level retrieval using hybrid approach of embedding models and then fine-level retrieval using LLM to avoid context length saturation.",
+            "Using Attentive Reasoning Queries (ARQ) prompting technique to instruct both retriever and generator LLMs to effectively reduce attention drift."
+          ]
+        },
+        {
+          "title": "Guard-railing Generative AI using LLM-as-Judge Metrics and SLM finetuned Metrics",
+          "details": [
+            "Explored metric creation using LLM as a Judge for rapid development and performance evaluation of RAG based Q&A system.",
+            "LORA finetuned Small Language Models around 7-15B parameter models to safeguard from sharing critically wrong/senstive answers in production.",
+            "Devised modified-PPO based RL training regime based on Reinforcement-Learning-through-Verifiable-Rewards (RLVR) to reduce accuracy gap between LLM and SLM performance."
+          ]
+        }
+      ]
     },
     {
       "sn": 2,
-      "link": "http://pitchteq.com/",
-      "workPosition": "PHP Developer",
-      "periodStart": "July 2016",
-      "periodEnd": "July 2018",
-      "organisation": "PitchTeQ ",
-      "experience": "A group of college students established a web solutions startup. Worked on an e-commerce project.",
-      "type": "work"
-    },
-    {
-      "sn": 1,
-      "link": "http://www.praxisinfotech.com/",
-      "workPosition": "Web Development Intern",
-      "periodStart": "June 2017",
-      "periodEnd": "July 2017",
-      "organisation": "Praxis Infotech ",
-      "experience": "Developed a PHP, MySQL web application. Added a layer on top of Google maps for places and events.",
-      "type": "work"
-    },
-    {
-      "sn": 0,
-      "link": "https://www.media.net/",
-      "workPosition": "Software Development Engineer",
-      "periodStart": "July 2018",
-      "periodEnd": "Feb 2020",
-      "organisation": "Media.Net",
-      "experience": "<ul><li>Involved in designing, developing features and parts of an App Distribution platform.</li><li>Majorly my work involves:</li><ul><li>– Designing, writing and consuming HTTP-REST APIs.</li><li>– Setting up job queues for multiple monitoring tasks.</li><li>– Writing template code for full-stack Web and Desktop applications.</li><li>– Automating and setting up application build processes.</li><li>– Extensive research and POC creation of features,solutions for novel business requirements.</li><li>– Identifying bottlenecks across system and optimize database queries, page load time, serving time, build time.</li></ul><li>Developed node-js, python back-end applications for automating and monitoring application build processes.</li><li>Developed node-js module for restructuring and renaming directory tree, handled resolution of interlinked file-paths in files.</li><li>Developed macOs desktop application(A Safari App Extension) using Swift for search monetization with app installer and app auto update feature from scratch</li></ul>",
-      "type": "work"
-    },
-    {
-      "sn": -1,
-      "link": "https://www.cohesity.com",
-      "workPosition": "Member of Technical Staff",
-      "periodStart": "Feb 2020",
-      "periodEnd": "Present",
-      "organisation": "Cohesity",
-      "experience": "<ul><li>\nDevelopingdistributedsystemsoftwareusingC++,Golangfordataprotection.</li></ul>",
-      "type": "work"
+      "workPosition": "Applied Scientist I",
+      "periodStart": "August 2022",
+      "periodEnd": "January 2024",
+      "organisation": "Amazon AGI Speech Team (Previously Alexa ASR)",
+      "link": "https://www.amazon.science/",
+      "description": "Worked on Alexa's Automatic Speech Recognition (ASR) production models. Improved hi-IN production models by incorporating different tech-stacks in the pipeline.",
+      "projects": [
+        {
+          "title": "Bootstrapping ASR for Rapid Language Expansion in a BOOM",
+          "details": [
+            "Built ASR framework addressing challenges of building systems for new languages without large labelled data corpus.",
+            "Explored leveraging foundation models, distilling from massive multilingual teacher models for acountic encoder pre-training, and semi-supervised learning (SSL).",
+            "Used Text-to-Speech augmentation to boost model performance under extreme low resource scenarios.",
+            "Demonstrated effective amalgamation of training strategies enabling boot-strapping new languages with 10x less labelled data requirements and launch ready WER.",
+            "Setup data pipeline for open source multi-lingual data sources and proposed curriculum learning approach for scaling model on ever-increasing leanguage set."
+          ]
+        }
+      ]
     }
   ],
+  "thesis": {
+    "title": "Novel Neural Architectures Based on Recurrent Connections & Symmetric Filters for Visual Processing",
+    "advisor": "Prof. S.K. Nandy",
+    "periodStart": "August 2019",
+    "periodEnd": "July 2022",
+    "inst": "Indian Institute of Science, Banglore",
+    "link": "https://etd.iisc.ac.in/handle/2005/6022",
+    "description": [
+      "Proposed two neural network architectures inspired from the neuronal pathways present in the human brain. First is a type of Recurrent Convolutional Neural Network layer called as Long-Short-Term-Convolutional-Neural-Network (LST_CNN) and the other is a Symmetric Convolutional Neural Network layer based on Symmetric Filters.",
+      "The proposed LST_CNN layer is not just limited to spatial learning but is also capable of exploiting temporal knowledge from the data due to the implicit presence of recurrence in the structure. Tested its capability on object detection and tracking.",
+      "Filter weights from deep SOTA networks when visualized show symmetric patterns. This is in strong correlation with the visual cortex in human brain which has evolved in detecting the pervasive symmetry present in nature. Exploiting this, the proposed symmetric convolutional layer reduces not only computational resources but also memory footprint without hampering the accuracy compared to the standard convolutional layer."
+    ]
+  },
   "projects": [
     {
       "sn": 2,
@@ -504,9 +537,137 @@
       ],
       "shortInfo": "Nyquist Sampling theroem is one of most important theorem in Digital Signal Processing field. In this project we wanted to see what happens to signal when it is sampled at different sampling rates. Main aim was to learn EDA tools and build our own hand-made PCB(Printed Circuit Board). ",
       "link": "https://www.notion.so/Nyquist-Sampling-Theorem-fb960179b12e49479db1797f2d23ad92"
+    },
+    {
+      "sn": 4,
+      "projectTitle": "Real-Time Multi-Object Detection and Tracking",
+      "periodStart": "August 2020",
+      "periodEnd": "February 2022",
+      "toolsUsed": [
+        "PyTorch",
+        "YOLOv3",
+        "Python",
+        "OpenCV"
+      ],
+      "tags": [
+        "Deep Learning",
+        "Object Detection",
+        "Object Tracking",
+        "Computer Vision",
+        "Real-time"
+      ],
+      "shortInfo": "Developed a neural network trained end-to-end on both object detection and tracking. Built on YOLOv3 architecture to simultaneously learn spatila features from the images and temporal dependencies between features. Tested on Object Tracking Benchmark (OTB) dataset. The network not only learned to track the main annotated object but also generalized to multiple objects present in the video, inferring that tracking capability extends to all classes the detector can identify.",
+      "link": "https://github.com/Harish-Agrawal"
+    },
+    {
+      "sn": 5,
+      "projectTitle": "Symmetric Convolutional Filters: A Novel Way to Constrain Parameters in CNN",
+      "periodStart": "January 2021",
+      "periodEnd": "November 2021",
+      "toolsUsed": [
+        "PyTorch",
+        "Python",
+        "CUDA"
+      ],
+      "tags": [
+        "Deep Learning",
+        "CNN",
+        "Memory Optimization",
+        "NN Model Compression",
+        "Symmetric Filters",
+        "Computer Vision"
+      ],
+      "shortInfo": "Created a new type of Convolutional Layer using Symmetrical filter weights to reduce memory footprint and computational resources of SOTA neural networks. Experiments showed significant memory reduction with minimal accuracy trade-off. When used only on first few layers, it even showed better accuracy than original SOTA networks. Research leveraged the inherent symmetric patterns found in deep network filter weights, correlating with visual cortex evolution for detecting pervasive symmetry in nature.",
+      "link": "https://arxiv.org/abs/2202.13099"
+    },
+    {
+      "sn": 6,
+      "projectTitle": "Stall Catcher - Alzheimer's Research Competition",
+      "periodStart": "July 2020",
+      "periodEnd": "July 2020",
+      "toolsUsed": [
+        "Inception-v3",
+        "LSTM",
+        "Python",
+        "TensorFlow"
+      ],
+      "tags": [
+        "Deep Learning",
+        "Medical Imaging",
+        "Competition",
+        "Data Science",
+        "Computer Vision"
+      ],
+      "shortInfo": "Competed in 'Clog Loss: Alzheimer's Research with Stall Catchers' hosted by MATHWORKS on DrivenData. Objective was to classify brain blood vessel segments as flowing or stalled. Created a two-stage neural network with Inception-v3 followed by LSTM cells, trained on 3D image stacks from live mouse brains. Achieved rank of 29 out of 923 participants, performing better than 96% of competitors.",
+      "link": "https://github.com/Harish-Agrawal/stallCatcher"
+    },
+    {
+      "sn": 7,
+      "projectTitle": "Pre-Cognito - Slippery Surface Detection",
+      "periodStart": "January 2018",
+      "periodEnd": "July 2018",
+      "toolsUsed": [
+        "Remote Sensing",
+        "Physics",
+        "Spectroscopy",
+        "Image Processing"
+      ],
+      "tags": [
+        "Ideation",
+        "Remote Sensing",
+        "Computer Vision",
+        "Safety"
+      ],
+      "shortInfo": "Ideation project to develop technology for detecting slipper surfaces on roads using Remote Sensing concepts. Solution based on two key principles: (1) light of different wavelengths reflects differently based on surface roughness - specular reflection on smooth surfaces vs diffuse on rough surfaces, and (2) water's high absorption coefficient for Short Wave Infra-Red light makes wet surfaces appear dark relative to surrounding road surface, based on NASA Jet Propulsion Laboratory experiments.",
+      "link": "https://drive.google.com/drive/folders/1E_S-YTgYVTJfGGvahn9kLGw4-DBsZSau"
     }
   ],
-  "summary": "<p>Hello, I'm a researcher in field of Computational and Data Science. I'm currently working on deep learning models to solve Computer Vision problems. </p><p>I'm amazed by the field of Artificial Intelligence and the impact it is making on people lives. I seek to learn and apply all of it such that it will help us solve real world problems.</p>",
+  "achievements":[
+    {
+      "sn": 1,
+      "title": "GATE 2019 - All India Rank 708",
+      "year": "2019",
+      "organisation": "Graduate Aptitude Test in Engineering (ECE)",
+      "description": "Secured All India Rank 708 in GATE'19 (ECE) with a score of 714/1000"
+    },
+    {
+      "sn": 2,
+      "title": "Winner - INNOFEST Inter College Ideation Event",
+      "year": "2017-18",
+      "organisation": "HELLA India Automotive, Pune",
+      "description": "Won first prize in inter-college ideation event conducted by HELLA India Automotive"
+    },
+    {
+      "sn": 3,
+      "title": "Winner - Tech-Quiz at Vision 2016",
+      "year": "2016",
+      "organisation": "Walchand College of Engineering, Sangli",
+      "description": "Won Tech-Quiz event at Vision 2016 held at Walchand College of Engineering"
+    },
+    {
+      "sn":4,
+      "title": "Best Technical Automotive Design Model Award",
+      "year": "2016",
+      "organisation": "ELESA - Technokaizen",
+      "description": "Won 'The Best Technical Automotive Design Model' award in Technokaizen, Intra-Club activity organized by Electonics Student Association"
+    },
+    {
+      "sn": 5,
+      "title": "Winner - TECHMANTHAN Matlab Championship",
+      "year": "2014-15",
+      "organisation": "UVSOFTS Technologies & AAYAM IIT BHU Varanasi",
+      "description": "Winner in zonal rounds of TECHMANTHAN 2014-2015 Matlab workshop cum Championship"
+    },
+    {
+      "sn": 6,
+      "title": "Runner Up - INCEPTION Event at PRUDENCE",
+      "year": "2015",
+      "organisation": "PACE Club, WCE",
+      "description": "Runner Up in INCEPTION event of PRUDENCE organized by PACE club at WCE"
+    }
+  ],
+  "summary": "<p>Hello, I'm a Senior Applied AI/ML Associate at JP Morgan & Chase, working on Conversational AI systems. I completed my M.Tech Research in Computational and Data Science from Indian Institute of Science, Banglore in 2022.</p><p>I specialize in Deep Learning, Computer Vision, Natural Language Processing and Automatic Speech Recognition. My current work focuses on building pipelines for AI Safety and Alignments.</p>",
+  // "summary": "<p>Hello, I'm a researcher in field of Computational and Data Science. I'm currently working on deep learning models to solve Computer Vision problems. </p><p>I'm amazed by the field of Artificial Intelligence and the impact it is making on people lives. I seek to learn and apply all of it such that it will help us solve real world problems.</p>",
   "profileLinks": [
     {
       "name": "Github",

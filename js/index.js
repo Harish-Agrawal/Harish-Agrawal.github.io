@@ -117,6 +117,45 @@ function loadLikes(likes){
 	$('#likes').html(likesInnerHTML);
 }
 
+function loadIndustryExperience(industryExperience){
+	industryExperience.sort(function(a,b){
+		return a.sn-b.sn;
+	});
+	var i, j:
+	var expInnerHTML = '';
+	for(i=0;i<industryExperience.length;i++){
+		var exp = industryExperience[i];
+		expInnerHTML+=`
+		<div class="row work">
+			<div class="row title">
+				<a href="${exp.link}" target="_blank">${exp.organisation}</a> |
+				${exp.workPosition} |
+				${exp.periodStart} - ${exp.periodEnd}
+			</div>
+			<hr/>
+			<div class="row details">
+				${exp.description}
+			</div>`;
+
+		// Add projects if they exist
+		if(exp.projects && exp.projects.length>0){
+			for(j=0;j<exp.projects.length;j++){
+				var project = exp.projects[j];
+				expInnerHTML+=`
+					<div class="row" style="margin-left: 20px; margin-top: 15px;">
+						<div class="title" style="font-size: 1.1em;"${projects.title}</div>
+						<ul style="margin-top: 10px;">`;
+					for(var k=0;k<projects.details.length;k++){
+						expInnerHTML+=`<li>${projects.details[k]}</li>`;
+					}
+					expInnerHTML+=`</ul></div>`;
+			}
+		}
+		expInnerHTML+=`</div>`;
+	}
+	$('#industryExperience').html(expInnerHTML);
+}
+
 function loadBlog() {
 	var blogHtml = `<div class='sk-ww-medium-publication-feed' data-embed-id='26322'></div><script src='https://www.sociablekit.com/app/embed/medium-publication-feed/widget.js'></script>`;
 	$('#blog').html(blogHtml);	
@@ -251,6 +290,7 @@ $(document).ready(function() {
 				// Setup tabs
 				$('#tabs').html(`					
 					<li class="tab col s2"><a href="#hello">Hello</a></li>
+					<li class="tab col s2"><a href=#industryExperience">Industry</a></li>
 					<li class="tab col s2"><a href="#skills">Skills</a></li>
 					<li class="tab col s2"><a href="#projects">Projects</a></li>
 					<li class="tab col s3"><a href="#experience">Experience</a></li>
@@ -270,6 +310,7 @@ $(document).ready(function() {
 				loadLikes(profile.likes);
 				$('#helloText').html(profile.helloText);
 				loadLinks(profile.profileLinks);
+				if(profile.industryExperience) loadIndustryExperience(profile.industryExperience);
 				loadSkills(profile.skills);
 				loadProjects(profile.projects);
 				loadWorks(profile.experince);
