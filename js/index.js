@@ -118,7 +118,7 @@ function loadLikes(likes){
 }
 
 function loadIndustryExperience(industryExperience){
-	industryExperience.sort(function(a,b){
+	industryExperience = industryExperience.sort(function(a,b){
 		return a.sn-b.sn;
 	});
 	var i, j:
