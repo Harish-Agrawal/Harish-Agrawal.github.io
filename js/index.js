@@ -162,6 +162,28 @@ function loadIndustryExperience(industryExperience) {
     $('#industryExperience').html(expInnerHTML);
 }
 
+function loadThesis(thesis){
+	if(!thesis) return;
+	var thesisHTML = `
+	<div class="row work">
+		<div class="row title">
+			${thesis.title}
+		</div>
+		<hr/>
+		<div class="row">
+			<strong>Advisor:</strong> ${thesis.advisor} |
+			<strong>Institute:</strong> ${thesis.inst} |
+			<strong>Period:</strong> ${thesis.periodStart} - ${thesis.periodEnd}
+			${thesis.link ? ` | <a href="${thesis.link}" target="_blank"><i class="material-icons" style="font-size: 1em; vertical-align: middle;">link</i> Thesis Link</a>`: ''}
+		</div>
+		<div class="row details" style="margin-top: 20px;">`;
+
+	for(var i=0;i<thesis.description.length;i++){
+		thesisHTML+=`<p>${thesis.description[i]}</p>`;
+	}
+	thesisHTML+=`</div></div>`;
+	$('#thesis').html(thesisHTML);
+}
 
 function loadBlog() {
 	var blogHtml = `<div class='sk-ww-medium-publication-feed' data-embed-id='26322'></div><script src='https://www.sociablekit.com/app/embed/medium-publication-feed/widget.js'></script>`;
@@ -298,6 +320,7 @@ $(document).ready(function() {
 				$('#tabs').html(`					
 					<li class="tab col s2"><a href="#hello">Hello</a></li>
 					<li class="tab col s2"><a href="#industryExperience">Industry</a></li>
+					<li class="tab col s2"><a href="#thesis">Thesis</a></li>
 					<li class="tab col s2"><a href="#skills">Skills</a></li>
 					<li class="tab col s2"><a href="#projects">Projects</a></li>
 					<li class="tab col s3"><a href="#experience">Experience</a></li>
@@ -318,6 +341,7 @@ $(document).ready(function() {
 				$('#helloText').html(profile.helloText);
 				loadLinks(profile.profileLinks);
 				if (profile.industryExperience) loadIndustryExperience(profile.industryExperience);
+				if (profile.thesis) loadThesis(profile.thesis);
 				loadSkills(profile.skills);
 				loadProjects(profile.projects);
 				loadWorks(profile.experince);
