@@ -345,14 +345,14 @@ $(document).ready(function() {
 				
 				// Setup tabs
 				$('#tabs').html(`					
-					<li class="tab col s2"><a href="#hello">Hello</a></li>
-					<li class="tab col s2"><a href="#industryExperience">Industry</a></li>
-					<li class="tab col s2"><a href="#thesis">Thesis</a></li>
-					<li class="tab col s2"><a href="#skills">Skills</a></li>
-					<li class="tab col s2"><a href="#projects">Projects</a></li>
-					<li class="tab col s2"><a href="#achievements">Awards</a></li>
-					<li class="tab col s2"><a href="#experience">Club</a></li>
-					<li class="tab col s2"><a href="#education">Education</a></li>
+					<li class="tab"><a href="#hello">Hello</a></li>
+					<li class="tab"><a href="#industryExperience">Industry</a></li>
+					<li class="tab"><a href="#thesis">Thesis</a></li>
+					<li class="tab"><a href="#skills">Skills</a></li>
+					<li class="tab"><a href="#projects">Projects</a></li>
+					<li class="tab"><a href="#achievements">Awards</a></li>
+					<li class="tab"><a href="#experience">Club</a></li>
+					<li class="tab"><a href="#education">Education</a></li>
 				`);
 				
 				// Setup typed text
@@ -375,7 +375,7 @@ $(document).ready(function() {
 				if(profile.achievements) loadAchievements(profile.achievements);
 				loadWorks(profile.experince);
 				loadEducations(profile.educations);
-				loadMoghysSays();
+				// loadMoghysSays();
 				
 				// Initialize UI components after content is loaded
 				onBodyLoad();
