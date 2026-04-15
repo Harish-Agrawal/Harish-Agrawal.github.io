@@ -118,7 +118,7 @@ function loadLikes(likes){
 }
 
 function loadIndustryExperience(industryExperience){
-	industryExperience = industryExperience.sort(function(a,b){
+	industryExperience.sort(function(a,b){
 		return a.sn-b.sn;
 	});
 	var i, j:
@@ -310,7 +310,7 @@ $(document).ready(function() {
 				loadLikes(profile.likes);
 				$('#helloText').html(profile.helloText);
 				loadLinks(profile.profileLinks);
-				if(profile.industryExperience) loadIndustryExperience(profile.industryExperience);
+				loadIndustryExperience(profile.industryExperience);
 				loadSkills(profile.skills);
 				loadProjects(profile.projects);
 				loadWorks(profile.experince);
