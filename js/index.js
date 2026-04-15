@@ -185,6 +185,33 @@ function loadThesis(thesis){
 	$('#thesis').html(thesisHTML);
 }
 
+function loadAchievements(achievements) {
+    // Sort by SN (serial number)
+    achievements.sort(function(a, b) {
+        return a.sn - b.sn;
+    });
+
+    var achievementsHTML = '';
+    for (var i = 0; i < achievements.length; i++) {
+        var ach = achievements[i];
+        achievementsHTML += `
+        <div class="row work">
+            <div class="row title">
+                ${ach.title} (${ach.year})
+            </div>
+            <hr/>
+            <div class="row details">
+                <strong>${ach.organisation}</strong>
+                <div style="margin-top: 5px;">
+                    ${ach.description || ""} 
+                </div>
+            </div>
+        </div>`;
+    }
+    $('#achievements').html(achievementsHTML);
+}
+
+
 function loadBlog() {
 	var blogHtml = `<div class='sk-ww-medium-publication-feed' data-embed-id='26322'></div><script src='https://www.sociablekit.com/app/embed/medium-publication-feed/widget.js'></script>`;
 	$('#blog').html(blogHtml);	
@@ -323,8 +350,9 @@ $(document).ready(function() {
 					<li class="tab col s2"><a href="#thesis">Thesis</a></li>
 					<li class="tab col s2"><a href="#skills">Skills</a></li>
 					<li class="tab col s2"><a href="#projects">Projects</a></li>
-					<li class="tab col s3"><a href="#experience">Experience</a></li>
-					<li class="tab col s3"><a href="#education">Education</a></li>
+					<li class="tab col s2"><a href="#achievements">Awards</a></li>
+					<li class="tab col s2"><a href="#experience">Club</a></li>
+					<li class="tab col s2"><a href="#education">Education</a></li>
 				`);
 				
 				// Setup typed text
@@ -344,6 +372,7 @@ $(document).ready(function() {
 				if (profile.thesis) loadThesis(profile.thesis);
 				loadSkills(profile.skills);
 				loadProjects(profile.projects);
+				if(profile.achievements) loadAchievements(profile.achievements);
 				loadWorks(profile.experince);
 				loadEducations(profile.educations);
 				loadMoghysSays();
