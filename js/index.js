@@ -310,7 +310,7 @@ $(document).ready(function() {
 				loadLikes(profile.likes);
 				$('#helloText').html(profile.helloText);
 				loadLinks(profile.profileLinks);
-				if(profile.industryExperience) loadIndustryExperience(profile.industryExperience);
+				// if(profile.industryExperience) loadIndustryExperience(profile.industryExperience);
 				loadSkills(profile.skills);
 				loadProjects(profile.projects);
 				loadWorks(profile.experince);
