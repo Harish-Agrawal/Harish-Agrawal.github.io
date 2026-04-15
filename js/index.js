@@ -297,7 +297,7 @@ $(document).ready(function() {
 				// Setup tabs
 				$('#tabs').html(`					
 					<li class="tab col s2"><a href="#hello">Hello</a></li>
-					<li class="tab col s2"><a href=#industryExperience">Industry</a></li>
+					<li class="tab col s2"><a href="#industryExperience">Industry</a></li>
 					<li class="tab col s2"><a href="#skills">Skills</a></li>
 					<li class="tab col s2"><a href="#projects">Projects</a></li>
 					<li class="tab col s3"><a href="#experience">Experience</a></li>
@@ -317,7 +317,7 @@ $(document).ready(function() {
 				loadLikes(profile.likes);
 				$('#helloText').html(profile.helloText);
 				loadLinks(profile.profileLinks);
-				loadIndustryExperience(profile.industryExperience);
+				if (profile.industryExperience) loadIndustryExperience(profile.industryExperience);
 				loadSkills(profile.skills);
 				loadProjects(profile.projects);
 				loadWorks(profile.experince);
